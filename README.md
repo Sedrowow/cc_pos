@@ -28,7 +28,7 @@ There are no current releases as this software is in progress
 
 ## TODO
 
-* Finalise refactor
+* Extract config out to seperate file
 * Allow purchase message to flow to shelf and back
 * Method for determining stock (when and where)
 * Write cashier system
