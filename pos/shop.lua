@@ -41,7 +41,9 @@ local function getStockLevel(item)
 	while true do
 		local event, modemSide, senderChannel, replyChannel,
 			message, senderDistance = os.pullEvent("modem_message")
-		return message
+		if senderChannel == shelves[item] then
+			return message
+		end
 	end
 end
 
