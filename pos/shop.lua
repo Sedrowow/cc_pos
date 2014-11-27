@@ -53,4 +53,4 @@ local function tellCashier()
 
 end
 
-return Stock
+return Shop
