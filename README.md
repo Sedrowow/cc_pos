@@ -9,11 +9,14 @@ This uses the following setup:
 * one POS computer node 
   * has a 4x3 set of monitors attached above
   * has a modem attached at the rear
-* four slave "shelves" that are within the same chunk running the turtle software.
+  * uses the pos.lua code and the libraries in the pos directory. These all sit in the same directory on the POS computer.
+* four slave "shelves" that are within the same chunk running the turtle software - turtle.lua.
   * each shelf must have a wireless modem attached at the back
   * for the armour set up, have a chest above, below to the right and left of the turtle containing one piece of the armour. Sets must be complete.
   * an output to the front to the customer
 * a cashier turtle which to be written
+
+
 
 ## Releases
 
