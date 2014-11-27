@@ -1,8 +1,13 @@
-local mon = peripheral.wrap("top")
-
 local textApi = require "text"
 local buttonApi = require "button"
 local shop = require "shop"
+
+local modem = peripheral.wrap(modemSide)
+
+local mon = peripheral.wrap(monitorSide)
+mon.setTextScale(1)
+mon.setTextColor(colors.white)
+mon.setBackgroundColor(colors.black)
 
 local shelves = {
    "wood" = 3234,
@@ -12,12 +17,10 @@ local shelves = {
 }
 local posPort = 3233
 local cashier = 3238
+local modemSide = "back"
+local monitorSide = "top"
+shop.init(posPort, cashier, shelves, modem)
 
-mon.setTextScale(1)
-mon.setTextColor(colors.white)
-mon.setBackgroundColor(colors.black)
-
-shop.init(posPort, cashier, shelves)
 textApi.init(mon, 2)
 buttonApi.init(mon)
 

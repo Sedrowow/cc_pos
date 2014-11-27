@@ -7,10 +7,12 @@ local posPort = {}
 local shelves = {}
 local cashier = {}
 
-function Shop.init(_posPort, _cashier, _shelves)
+function Shop.init(_posPort, _cashier, _shelves, _modem)
 	posPort = _posPort
 	cashier = _cashier
-	_shelves = shelves
+	shelves = _shelves
+	modem = _modem
+	modem.open(posPort)
 end
 
 function Shop.addStock(id, name, number, price)
