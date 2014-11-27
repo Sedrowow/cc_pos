@@ -1,4 +1,4 @@
-# Point of Sale using lua for Computer craft
+# Point of Sale using lua for Computer Craft
 
 In order to run an effective shop, a custommer must find it easy purchase items. This computer craft software should enable a player to set up a shop that allows multiple items to be sold for prices that are governed by the 'value' of items that the shop keeper can set.
 
