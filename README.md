@@ -18,7 +18,9 @@ This uses the following setup:
   * an output to the front to the customer
 * a cashier turtle which to be written
 
+## Restrictions
 
+There are no restrictions to using this code - please go ahead and do what you want with it. However, I ask that you do not use knowledge of this software to break into someone else's shop (including mine), however easy it may be. This goes against the spirit of the game and only makes it less fun for everyone.
 
 ## Releases
 
