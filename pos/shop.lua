@@ -36,10 +36,6 @@ function Shop.addToBasket(item)
 	basket = stock[item]
 end
 
-function purchase()
-
-end
-
 local function getStockLevel(item)
 	modem.transmit(shelves[item], posPort, "stockLevels")
 	while true do
@@ -47,10 +43,6 @@ local function getStockLevel(item)
 			message, senderDistance = os.pullEvent("modem_message")
 		return message
 	end
-end
-
-local function tellCashier()
-
 end
 
 return Shop
