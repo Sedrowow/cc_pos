@@ -125,6 +125,9 @@ end
 setupStock()
 storeHomePage()
 while true do
-   local e,side,x,y = os.pullEvent("monitor_touch")
-   buttonApi.checkxy(x,y)
+   event = {os.pullEvent()}
+   if(event[1] == "monitor_touch") then
+      local e,side,x,y = unpack(event)
+      buttonApi.checkxy(x,y)
+   end
 end
