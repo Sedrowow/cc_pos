@@ -11,8 +11,8 @@ This uses the following setup:
   * has a modem attached at the rear
   * uses the pos.lua code and the libraries in the pos directory. These all sit in the same directory on the POS computer.
 * four slave "shelf" turtles
-  * each shelf runs the turtle.lua script
-  * the turtle.lua script is modified such that the port of that shelf matches the one in the pos's look up
+  * each shelf runs the shelf.lua script
+  * the shelf.lua script is modified such that the port of that shelf matches the one in the pos's look up
   * each shelf must have a wireless modem attached at the back
   * for the armour set up, have a chest above, below to the right and left of the turtle containing one piece of the armour. Sets must be complete.
   * an output to the front to the customer
