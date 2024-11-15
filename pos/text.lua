@@ -41,7 +41,7 @@ function TextApi.getLineNumber()
    return lineCursor
 end
 
-local function getCenter(text)
+function getCenter(text)
    w, h = mon.getSize()
    return (w-string.len(text))/2+1
 end

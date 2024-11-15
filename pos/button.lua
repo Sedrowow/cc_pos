@@ -49,7 +49,7 @@ function ButtonApi.checkxy(x, y)
    end
 end
 
-local function fill(text, color, bData)
+function fill(text, color, bData)
    mon.setBackgroundColor(color)
    local yspot = math.floor((bData["ymin"] + bData["ymax"]) /2)
    local xspot = math.floor((bData["xmax"] - bData["xmin"] - string.len(text)) /2) +1
@@ -72,7 +72,7 @@ local function fill(text, color, bData)
    mon.setBackgroundColor(colors.black)
 end
 
-local function setLastPressed(name)
+function setLastPressed(name)
   lastPressed = button[name]
 end
 

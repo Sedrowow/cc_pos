@@ -1,11 +1,11 @@
-local Shop = {}
+Shop = {}
 
-local stock = {}
-local basket = {}
+stock = {}
+basket = {}
 
-local posPort = {}
-local shelves = {}
-local cashier = {}
+posPort = {}
+shelves = {}
+cashier = {}
 
 function Shop.init(_posPort, _cashier, _shelves, _modem)
 	posPort = _posPort
@@ -28,19 +28,35 @@ function Shop.getStock()
 end
 
 function Shop.getStockLevel(item)
-	stock[item]["number"] = getStockLevel(item)
-	return stock[item]["number"]
+	modem.transmit(shelves[item], posPort, "stockLevels")
+	while true do
+		local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
+		if senderChannel == shelves[item] then
+			stock[item]["number"] = message
+			return stock[item]["number"]
+		end
+	end
 end
 
 function Shop.addToBasket(item)
 	basket = stock[item]
 end
 
-local function getStockLevel(item)
+function getStockLevel(item)
 	modem.transmit(shelves[item], posPort, "stockLevels")
 	while true do
 		local event, modemSide, senderChannel, replyChannel,
 			message, senderDistance = os.pullEvent("modem_message")
+		if senderChannel == shelves[item] then
+			return message
+		end
+	end
+end
+
+function Shop.purchaseItem(item)
+	modem.transmit(shelves[item], posPort, "purchase")
+	while true do
+		local event, modemSide, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
 		if senderChannel == shelves[item] then
 			return message
 		end
