@@ -118,6 +118,26 @@ end
 function payButton()
 	buttonApi.makeButton("pay_button", "Pay", pay, 15, 25, 8, 12)
 end
+
+function pay()
+	local chest = peripheral.wrap("left")
+	if remainingCost <= 0 then
+		-- Clear the chest (collect payment)
+		for slot, item in pairs(chest.list()) do
+			chest.pushItems(peripheral.getName(chest), slot)
+		end
+		-- Send completion message to shelves
+		for shelf, items in pairs(shelves) do
+			modem.transmit(shop.getShelfPort(shelf), posPort, "purchase_complete")
+		end
+		-- Clear basket and return to store
+		shop.clearBasket()
+		storeHomePage()
+	else
+		textApi.centerText("Payment incomplete")
+	end
+	textApi.centerText("Payment processing...")
+end
    
 function purchase()
 	local item = buttonApi.getLastPressed()["name"]
